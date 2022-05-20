@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearningApp">
         <activity
+            android:name=".StartActivity"
+            android:exported="false" />
+        <activity
             android:name=".LearnImageActivity"
             android:exported="false" />
         <activity

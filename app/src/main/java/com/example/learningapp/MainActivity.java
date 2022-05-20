@@ -50,18 +50,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        int image = selectImage(view.getId());
+        int image = ImageId(view.getId());
         Log.d("NumberMain",Integer.toString(image));
         Intent intent = new Intent(MainActivity.this,LearnImageActivity.class);
          intent.putExtra("Image", image);
       startActivity(intent);
     }
 
-    int selectImage(int id) {
+    int ImageId(int id) {
         int image = -1;
+        
         switch (id){
             case R.id.btnA:
                 image = R.drawable.kida;
+
+
                 break;
             case R.id.btnB:
                 image = R.drawable.kidb;
