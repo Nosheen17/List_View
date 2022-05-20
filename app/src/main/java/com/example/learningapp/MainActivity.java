@@ -52,9 +52,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         int image = selectImage(view.getId());
         Log.d("NumberMain",Integer.toString(image));
-      //  Intent intent = new Intent(MainActivity.this,LearningImageActivity.class);
-      //  Intent image1 = intent.putExtra("Image", image);
-       // startActivity(intent);
+        Intent intent = new Intent(MainActivity.this,LearnImageActivity.class);
+         intent.putExtra("Image", image);
+      startActivity(intent);
     }
 
     int selectImage(int id) {
