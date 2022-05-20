@@ -11,7 +11,7 @@
         android:theme="@style/Theme.LearningApp">
         <activity
             android:name=".StartActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".LearnImageActivity"
             android:exported="false" />
