@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LearningImage">
+    tools:context=".LearnImageActivity">
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
@@ -16,5 +17,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/kida"
         android:contentDescription="TODO" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

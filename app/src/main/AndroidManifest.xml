@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LearningApp">
         <activity
-            android:name=".LearningImageActivity"
+            android:name=".LearnImageActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
