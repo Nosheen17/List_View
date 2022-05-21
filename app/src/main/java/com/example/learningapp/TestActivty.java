@@ -29,7 +29,7 @@ public class TestActivty extends AppCompatActivity {
     // the next questions.
     int index;
     // Declare four button object references for displaying four options to choose from
-    Button btn2, btn3, btn4;
+    Button btn1, btn2, btn3, btn4;
     // A TextView for displaying points
     TextView tvPoints;
     // An integer variable to store points
@@ -43,11 +43,12 @@ public class TestActivty extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_activty);
+
         tvTimer = findViewById(R.id.tvTimer);
         // Get the handles for the Views
         tvResult = findViewById(R.id.tvResult);
         ivShowImage = findViewById(R.id.ivShowImage);
-
+        btn1 = findViewById(R.id.btn1);
         btn2 = findViewById(R.id.btn2);
         btn3 = findViewById(R.id.btn3);
         btn4 = findViewById(R.id.btn4);
@@ -125,12 +126,12 @@ public class TestActivty extends AppCompatActivity {
                 if (index > techList.size() - 1){
                     // If true, hide the ImageView and Buttons.
                     ivShowImage.setVisibility(View.GONE);
-
+                    btn1.setVisibility(View.GONE);
                     btn2.setVisibility(View.GONE);
                     btn3.setVisibility(View.GONE);
                     btn4.setVisibility(View.GONE);
                     // Go to GameOver screen with points using an Intent
-                    Intent intent = new Intent(TestActivty.this, StartActivity.class);
+                    Intent intent = new Intent(TestActivty.this,StartActivity.class);
                     intent.putExtra("points", points);
                     startActivity(intent);
                     // Finish StartGame Activity
@@ -167,11 +168,6 @@ public class TestActivty extends AppCompatActivity {
         newList.add(techListTemp.get(0));
         newList.add(techListTemp.get(1));
         newList.add(techListTemp.get(2));
-        newList.add(techListTemp.get(3));
-        newList.add(techListTemp.get(4));
-        newList.add(techListTemp.get(5));
-        newList.add(techListTemp.get(6));
-        newList.add(techListTemp.get(7));
         // Also add the correct answer into newList
         newList.add(correctAnswer);
         // Shuffle newList so that the correct answer can be placed in one of the four
@@ -179,10 +175,10 @@ public class TestActivty extends AppCompatActivity {
         Collections.shuffle(newList);
         // Once you shuffle newList, set all four Button's text with the elements
         // from newList.
-
-        btn2.setText(newList.get(0));
-        btn3.setText(newList.get(1));
-        btn4.setText(newList.get(2));
+        btn1.setText(newList.get(0));
+        btn2.setText(newList.get(1));
+        btn3.setText(newList.get(2));
+        btn4.setText(newList.get(3));
         // Also, set the ImageView with current image from map
         ivShowImage.setImageResource(map.get(techList.get(index)));
     }
@@ -190,12 +186,12 @@ public class TestActivty extends AppCompatActivity {
     public void nextQuestion(View view) {
         // This method is called because the user has tapped the Next button,
         // so, set the background color of all the buttons to the color that we used in start_game.xml.
-
+        btn1.setBackgroundColor(Color.parseColor("#2196f3"));
         btn2.setBackgroundColor(Color.parseColor("#2196f3"));
         btn3.setBackgroundColor(Color.parseColor("#2196f3"));
         btn4.setBackgroundColor(Color.parseColor("#2196f3"));
         // Enable the buttons
-
+        btn1.setEnabled(true);
         btn2.setEnabled(true);
         btn3.setEnabled(true);
         btn4.setEnabled(true);
@@ -206,12 +202,13 @@ public class TestActivty extends AppCompatActivity {
         if (index > techList.size() - 1){
             // If true, hide the ImageView and Buttons.
             ivShowImage.setVisibility(View.GONE);
+            btn1.setVisibility(View.GONE);
             btn2.setVisibility(View.GONE);
             btn3.setVisibility(View.GONE);
             btn4.setVisibility(View.GONE);
             // Go to GameOver screen with points
-            Intent intent = new Intent(TestActivty.this,StartActivity.class);
-            intent.putExtra("points", points);
+            Intent intent = new Intent(TestActivty.this, StartActivity.class);
+
             startActivity(intent);
             // Finish StartGame Activity
             finish();
@@ -225,9 +222,9 @@ public class TestActivty extends AppCompatActivity {
 
     public void answerSelected(View view) {
         // Change the clicked Button's background color
-        view.setBackgroundColor(Color.parseColor("#17243e"));
-        // Disable all four Buttons
 
+        // Disable all four Buttons
+        btn1.setEnabled(false);
         btn2.setEnabled(false);
         btn3.setEnabled(false);
         btn4.setEnabled(false);
@@ -246,10 +243,14 @@ public class TestActivty extends AppCompatActivity {
             // Here we are incrementing points by 1 here, but, you can increment by any number
             // you want.
             // Update the TextViews for points and result
+            view.setBackgroundColor(Color.parseColor("#2f8216"));
+            tvResult.setTextColor(Color.parseColor("#2f8216"));
             tvPoints.setText(points + " / " + techList.size());
             tvResult.setText("Correct");
         } else {
             // In else, that is, when the user answer is incorrect, show "Wrong" in tvResult.
+            view.setBackgroundColor(Color.parseColor("#e81017"));
+            tvResult.setTextColor(Color.parseColor("#e81017"));
             tvResult.setText("Wrong");
         }
     }

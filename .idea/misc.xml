@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/LearningApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/LearningApp/app/src/main/res/layout/activity_last.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LearningApp/app/src/main/res/layout/activity_learn_image.xml" value="0.1" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LearningApp/app/src/main/res/layout/activity_learning_image.xml" value="0.22" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LearningApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LearningApp/app/src/main/res/layout/activity_start.xml" value="0.25" />
-        <entry key="..\:/Users/Dell/AndroidStudioProjects/LearningApp/app/src/main/res/layout/activity_test_activty.xml" value="0.2" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/LearningApp/app/src/main/res/layout/activity_test_activty.xml" value="0.22" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LearningApp/app/src/main/res/layout/activity_test_over.xml" value="0.25" />
       </map>
     </option>
