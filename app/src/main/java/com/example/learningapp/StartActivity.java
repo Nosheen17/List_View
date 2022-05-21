@@ -33,7 +33,18 @@ public class StartActivity extends AppCompatActivity {
 
             }
         });
-     
+        git=findViewById(R.id.imageButton);
+        git.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoUrl("https://github.com/Nosheen17?tab=repositories");
+            }
+        });
 
+    }
+
+    private void gotoUrl(String s) {
+        Uri uri=Uri.parse(s);
+        startActivity(new Intent(Intent.ACTION_VIEW,uri));
     }
 }
